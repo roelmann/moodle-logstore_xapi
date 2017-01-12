@@ -46,15 +46,15 @@ abstract class Event extends PhpObj {
             'context' => [
                 'platform' => $opts['context_platform'],
                 'extensions' => [
-                    'http://xapi.jisc.ac.uk/extensions/sessionId'=>$opts['sessionid'],
+                    'http://xapi.jisc.ac.uk/sessionId'=>$opts['sessionid'],
 
                     'http://id.tincanapi.com/extension/ip-address'=>$opts['context_ext']['ip']
                     ,
                     'http://lrs.learninglocker.net/define/extensions/info' => $opts['context_info'],
 
-                        'http://xapi.jisc.ac.uk/extensions/courseArea'=> [
+                        'http://xapi.jisc.ac.uk/courseArea'=> [
                             'id'=>$opts['course_ext']->url,
-                            'http://xapi.jisc.ac.uk/extensions/vle_mod_id'=>$opts['course_ext']->shortname,
+                            'http://xapi.jisc.ac.uk/vle_mod_id'=>$opts['course_ext']->shortname,
 
                         ],
                 ],
@@ -107,7 +107,7 @@ abstract class Event extends PhpObj {
 
 
                     'extensions' => [
-                        'http://xapi.jisc.ac.uk/extensions/dueDate'=>date('c', $opts['module_ext']->duedate),
+                        'http://xapi.jisc.ac.uk/dueDate'=>date('c', $opts['module_ext']->duedate),
                     ],
             ],
         ];
@@ -150,7 +150,7 @@ abstract class Event extends PhpObj {
                     $opts['context_lang'] => $opts['app_description'],
                 ],
                 'extensions' => [
-                    'http://xapi.jisc.ac.uk/extensions/applicationType' => 'http://id.tincanapi.com/activitytype/lms'
+                    'http://xapi.jisc.ac.uk/applicationType' => 'http://id.tincanapi.com/activitytype/lms'
 
                 ],
             ],
@@ -167,7 +167,7 @@ abstract class Event extends PhpObj {
 
         $o=print_r($opts,true);
 
-        
+
         $module = [
             'id' => $opts['module_url'],
             'definition' => [
@@ -179,7 +179,7 @@ abstract class Event extends PhpObj {
                     $opts['context_lang'] => $opts['module_description'],
                 ],
                 'extensions' => [
-                    'http://xapi.jisc.ac.uk/extensions/applicationType' => 'http://id.tincanapi.com/activitytype/lms'
+                    'http://xapi.jisc.ac.uk/applicationType' => 'http://id.tincanapi.com/activitytype/lms'
 
                 ],
 
